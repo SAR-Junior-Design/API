@@ -90,7 +90,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"id\" : \"db9fef86-bc98-4c91-bd95-c4f18fb6c105\"\n}"
+							"raw": "{\n\t\"id\" : \"59bcce36-ad2f-4ec5-ba00-f0696909ee6d\"\n}"
 						},
 						"url": {
 							"raw": "{{url}}:{{port}}/delete_drone",
@@ -304,7 +304,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"mission_id\" : \"e4ca934d-988d-4a45-9139-c719dcfb491a\",\n\t\"drone_id\" : \"69e27595-d853-46a8-9616-ca4799514092\",\n\t\"operator_email\" : \"samcrane8@gmail.com\"\n}"
+							"raw": "{\n\t\"mission_id\" : \"8e040aae-5d1b-4328-a1c3-f52a958eefcd\",\n\t\"drone_id\" : \"4dda4948-2302-4185-b403-0f1fc62e2fdc\",\n\t\"operator_id\" : \"317b710c-1629-47be-8db7-ae910c146fc5\"\n}"
 						},
 						"url": {
 							"raw": "{{url}}:{{port}}/add_drone_to_mission",
