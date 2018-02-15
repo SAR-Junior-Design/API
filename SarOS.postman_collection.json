@@ -90,7 +90,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"id\" : \"59bcce36-ad2f-4ec5-ba00-f0696909ee6d\"\n}"
+							"raw": "{\n\t\"id\" : \"d27c0d1f-c3fb-4314-815b-c1b25d37196c\"\n}"
 						},
 						"url": {
 							"raw": "{{url}}:{{port}}/delete_drone",
@@ -118,7 +118,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"drone_id\" : \"69e27595-d853-46a8-9616-ca4799514092\"\n}"
+							"raw": "{\n\t\"drone_id\" : \"293270fa-7710-49f3-a7e6-258122ce56f5\"\n}"
 						},
 						"url": {
 							"raw": "{{url}}:{{port}}/get_drones_past_missions",
@@ -180,7 +180,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"mission_id\" : \"726c7742-d62b-4c92-87d8-7cbf13b92459\"\n}"
+							"raw": "{\n\t\"mission_id\" : \"7ed57c2e-a180-4e16-93a1-5c6de541a408\"\n}"
 						},
 						"url": {
 							"raw": "{{url}}:{{port}}/get_mission_drones",
@@ -236,7 +236,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"mission_id\" : \"e4ca934d-988d-4a45-9139-c719dcfb491a\"\n}"
+							"raw": "{\n\t\"mission_id\" : \"8e040aae-5d1b-4328-a1c3-f52a958eefcd\"\n}"
 						},
 						"url": {
 							"raw": "{{url}}:{{port}}/get_mission_info",
@@ -416,7 +416,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"mission_id\" : \"e4ca934d-988d-4a45-9139-c719dcfb491a\",\n\t\"area\" : {\n\t  \"type\": \"FeatureCollection\",\n\t  \"features\": [\n\t    {\n\t      \"type\": \"Feature\",\n\t      \"geometry\": {\n\t        \"type\": \"Polygon\",\n\t        \"coordinates\": [\n\t          [\n\t            [\n\t              -80.98382949829102,\n\t              30.040566430584597\n\t            ],\n\t            [\n\t              -79.55560684204102,\n\t              30.088107753367257\n\t            ],\n\t            [\n\t              -79.44574356079102,\n\t              29.18094129000178\n\t            ],\n\t            [\n\t              -80.66522598266602,\n\t              29.477861195816843\n\t            ],\n\t            [\n\t              -80.98382949829102,\n\t              30.040566430584597\n\t            ]\n\t          ]\n\t        ]\n\t      },\n\t      \"properties\": {}\n\t    }\n\t  ]\n\t} \n}"
+							"raw": "{\n\t\"mission_id\" : \"7ed57c2e-a180-4e16-93a1-5c6de541a408\",\n\t\"area\" : {\n\t  \"type\": \"FeatureCollection\",\n\t  \"features\": [\n\t    {\n\t      \"type\": \"Feature\",\n\t      \"geometry\": {\n\t        \"type\": \"Polygon\",\n\t        \"coordinates\": [\n\t          [\n\t            [\n\t              -80.98382949829102,\n\t              30.040566430584597\n\t            ],\n\t            [\n\t              -79.55560684204102,\n\t              30.088107753367257\n\t            ],\n\t            [\n\t              -79.44574356079102,\n\t              29.18094129000178\n\t            ],\n\t            [\n\t              -80.66522598266602,\n\t              29.477861195816843\n\t            ],\n\t            [\n\t              -80.98382949829102,\n\t              30.040566430584597\n\t            ]\n\t          ]\n\t        ]\n\t      },\n\t      \"properties\": {}\n\t    }\n\t  ]\n\t} \n}"
 						},
 						"url": {
 							"raw": "{{url}}:{{port}}/update_mission_area",
@@ -433,6 +433,34 @@
 					"response": []
 				},
 				{
+					"name": "Edit Mission Details",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"mission_id\" : \"8e040aae-5d1b-4328-a1c3-f52a958eefcd\",\n\t\"title\": \"North Georgia\",\n\t\"description\": \"Looking for someone in North Georgia\",\n\t\"area\" : {\n\t  \"type\": \"FeatureCollection\",\n\t  \"features\": [\n\t    {\n\t      \"type\": \"Feature\",\n\t      \"geometry\": {\n\t        \"type\": \"Polygon\",\n\t        \"coordinates\": [\n\t          [\n\t            [\n\t              -80.98382949829102,\n\t              30.040566430584597\n\t            ],\n\t            [\n\t              -79.55560684204102,\n\t              30.088107753367257\n\t            ],\n\t            [\n\t              -79.44574356079102,\n\t              29.18094129000178\n\t            ],\n\t            [\n\t              -80.66522598266602,\n\t              29.477861195816843\n\t            ],\n\t            [\n\t              -80.98382949829102,\n\t              30.040566430584597\n\t            ]\n\t          ]\n\t        ]\n\t      },\n\t      \"properties\": {}\n\t    }\n\t  ]\n\t} \n}"
+						},
+						"url": {
+							"raw": "{{url}}:{{port}}/edit_mission_details",
+							"host": [
+								"{{url}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"edit_mission_details"
+							]
+						},
+						"description": "Allows user to edit the details of a mission."
+					},
+					"response": []
+				},
+				{
 					"name": "Is Mission Live",
 					"request": {
 						"method": "POST",
@@ -444,7 +472,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"mission_id\" : \"123\"\n}"
+							"raw": "{\n\t\"mission_id\" : \"7ed57c2e-a180-4e16-93a1-5c6de541a408\"\n}"
 						},
 						"url": {
 							"raw": "{{url}}:{{port}}/is_mission_live",
@@ -482,7 +510,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"email\": \"admin@password.com\",\n  \"password\" : \"password\",\n  \"name\" : \"admin\",\n  \"account_type\" : \"admin\"\n}"
+							"raw": "{\n  \"email\": \"samcrane8@gmail.com\",\n  \"password\" : \"lawrence\",\n  \"name\" : \"admin\",\n  \"account_type\" : \"operator\"\n}"
 						},
 						"url": {
 							"raw": "{{url}}:{{port}}/register_user",
