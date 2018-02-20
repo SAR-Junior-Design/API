@@ -530,7 +530,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"email\": \"scrane31@gatech.edu\",\n  \"password\" : \"lawrence\",\n  \"name\" : \"admin\",\n  \"account_type\" : \"operator\"\n}"
+							"raw": "{\n  \"email\": \"samcrane8@gmail.com\",\n  \"password\" : \"lawrence\",\n  \"name\" : \"Sam\",\n  \"account_type\" : \"operator\"\n}"
 						},
 						"url": {
 							"raw": "{{url}}:{{port}}/register_user",
@@ -540,6 +540,38 @@
 							"port": "{{port}}",
 							"path": [
 								"register_user"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Update User Info",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic MTpsYXdyZW5jZQ=="
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Samuel Crane\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}:{{port}}/update_user_info",
+							"host": [
+								"{{url}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"update_user_info"
 							]
 						},
 						"description": ""
@@ -591,6 +623,29 @@
 							"port": "{{port}}",
 							"path": [
 								"list_all_users"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Info",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "]"
+						},
+						"url": {
+							"raw": "{{url}}:{{port}}/get_user_info",
+							"host": [
+								"{{url}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"get_user_info"
 							]
 						},
 						"description": ""
