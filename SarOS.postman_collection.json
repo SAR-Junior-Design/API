@@ -172,7 +172,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"title\" : \"Alps Search and Rescue Mission [10/23/5]\",\n\t\"area\" : {\n\t  \"type\": \"FeatureCollection\",\n\t  \"features\": [\n\t    {\n\t      \"type\": \"Feature\",\n\t      \"geometry\": {\n\t        \"type\": \"Polygon\",\n\t        \"coordinates\": [\n\t          [\n\t            [\n\t              -80.98382949829102,\n\t              30.040566430584597\n\t            ],\n\t            [\n\t              -79.55560684204102,\n\t              30.088107753367257\n\t            ],\n\t            [\n\t              -79.44574356079102,\n\t              29.18094129000178\n\t            ],\n\t            [\n\t              -80.66522598266602,\n\t              29.477861195816843\n\t            ],\n\t            [\n\t              -80.98382949829102,\n\t              30.040566430584597\n\t            ]\n\t          ]\n\t        ]\n\t      },\n\t      \"properties\": {}\n\t    }\n\t  ]\n\t},\n\t\"description\" : \"This is a search and rescue mission in the alps.\"\n}"
+							"raw": "{\n\t\"title\" : \"SAR Puerto Rico\",\n\t\"area\" : {\n\t  \"type\": \"FeatureCollection\",\n\t  \"features\": [\n\t    {\n\t      \"type\": \"Feature\",\n\t      \"geometry\": {\n\t        \"type\": \"Polygon\",\n\t        \"coordinates\": [\n\t          [\n\t            [\n\t              -80.98382949829102,\n\t              30.040566430584597\n\t            ],\n\t            [\n\t              -79.55560684204102,\n\t              30.088107753367257\n\t            ],\n\t            [\n\t              -79.44574356079102,\n\t              29.18094129000178\n\t            ],\n\t            [\n\t              -80.66522598266602,\n\t              29.477861195816843\n\t            ],\n\t            [\n\t              -80.98382949829102,\n\t              30.040566430584597\n\t            ]\n\t          ]\n\t        ]\n\t      },\n\t      \"properties\": {}\n\t    }\n\t  ]\n\t},\n\t\"description\" : \"This is a search and rescue mission in the alps.\",\n\t\"starts_at\": \"10/23/17\",\n\t\"ends_at\": \"10/24/17\"\n}"
 						},
 						"url": {
 							"raw": "{{url}}:{{port}}/register_mission",
@@ -293,6 +293,29 @@
 					"response": []
 				},
 				{
+					"name": "Get Missions",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{url}}:{{port}}/get_missions",
+							"host": [
+								"{{url}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"get_missions"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
 					"name": "Get Current Mission",
 					"request": {
 						"method": "GET",
@@ -324,7 +347,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"mission_id\" : \"8e040aae-5d1b-4328-a1c3-f52a958eefcd\",\n\t\"drone_id\" : \"4dda4948-2302-4185-b403-0f1fc62e2fdc\",\n\t\"operator_id\" : \"317b710c-1629-47be-8db7-ae910c146fc5\"\n}"
+							"raw": "{\n\t\"mission_id\" : \"7c0c8672-5ca6-4e6d-b22a-52e16e95d33e\",\n\t\"drone_id\" : \"91f7ba21-6aa7-4a70-bd30-e5bcee97e484\",\n\t\"operator_id\" : \"2e059539-2e78-4c2a-b65e-020f41931ef4\"\n}"
 						},
 						"url": {
 							"raw": "{{url}}:{{port}}/add_drone_to_mission",
@@ -686,6 +709,26 @@
 							"port": "{{port}}",
 							"path": [
 								"isLoggedIn"
+							]
+						},
+						"description": "This forces the session to end."
+					},
+					"response": []
+				},
+				{
+					"name": "Is Government Official",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{url}}:{{port}}/is_government_official",
+							"host": [
+								"{{url}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"is_government_official"
 							]
 						},
 						"description": "This forces the session to end."
