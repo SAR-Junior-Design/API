@@ -172,7 +172,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"title\" : \"SAR Puerto Rico\",\n\t\"area\" : {\n\t  \"type\": \"FeatureCollection\",\n\t  \"features\": [\n\t    {\n\t      \"type\": \"Feature\",\n\t      \"geometry\": {\n\t        \"type\": \"Polygon\",\n\t        \"coordinates\": [\n\t          [\n\t            [\n\t              -80.98382949829102,\n\t              30.040566430584597\n\t            ],\n\t            [\n\t              -79.55560684204102,\n\t              30.088107753367257\n\t            ],\n\t            [\n\t              -79.44574356079102,\n\t              29.18094129000178\n\t            ],\n\t            [\n\t              -80.66522598266602,\n\t              29.477861195816843\n\t            ],\n\t            [\n\t              -80.98382949829102,\n\t              30.040566430584597\n\t            ]\n\t          ]\n\t        ]\n\t      },\n\t      \"properties\": {}\n\t    }\n\t  ]\n\t},\n\t\"description\" : \"This is a search and rescue mission in the alps.\",\n\t\"starts_at\": \"10/23/17\",\n\t\"ends_at\": \"10/24/17\"\n}"
+							"raw": "{\n\t\"title\" : \"Burger Bowl\",\n\t\"area\" : {\n\t  \"type\": \"FeatureCollection\",\n\t  \"features\": [\n\t    {\n\t      \"type\": \"Feature\",\n\t      \"geometry\": {\n\t        \"type\": \"Polygon\",\n\t        \"coordinates\": \n\t          [\n\t            [\n\t              -84.40331608057022,\n\t              33.77956869005058\n\t            ],\n\t            [\n\t              -84.4034045934677,\n\t              33.77871482330934\n\t            ],\n\t            [\n\t              -84.40279841423033,\n\t              33.778752723580226\n\t            ],\n\t            [\n\t              -84.40222710371017,\n\t              33.77914287245249\n\t            ],\n\t            [\n\t              -84.40258651971817,\n\t              33.77951518429068\n\t            ],\n\t            [\n\t              -84.40331608057022,\n\t              33.77956869005058\n\t            ]\n\t          ]\n\t      },\n\t      \"properties\": {}\n\t    }\n\t  ]\n\t},\n\t\"description\" : \"Last scene in a cornfield. We're looking for a 5-6 male, caucasian wearing denim and plaid.\",\n\t\"starts_at\": \"10/23/17\",\n\t\"ends_at\": \"10/24/17\"\n}"
 						},
 						"url": {
 							"raw": "{{url}}:{{port}}/register_mission",
@@ -256,7 +256,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"mission_id\" : \"2c2ba2b2-479b-4f30-ad7d-1759e3e7e21c\"\n}"
+							"raw": "{\n\t\"mission_id\" : \"4ef49c03-7fde-47d5-816e-81ac07eee0da\"\n}"
 						},
 						"url": {
 							"raw": "{{url}}:{{port}}/get_mission_info",
@@ -266,6 +266,34 @@
 							"port": "{{port}}",
 							"path": [
 								"get_mission_info"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Clearance",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"mission_id\" : \"40119277-490f-4033-a394-9d8edd67afa4\",\n\t\"new_clearance_state\" : \"APPROVED\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}:{{port}}/edit_clearance",
+							"host": [
+								"{{url}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"edit_clearance"
 							]
 						},
 						"description": ""
@@ -613,7 +641,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"email\": \"samcrane8@gmail.com\",\n  \"password\" : \"lawrence\"\n}"
+							"raw": "{\n  \"email\": \"admin@password.com\",\n  \"password\" : \"password\"\n}"
 						},
 						"url": {
 							"raw": "{{url}}:{{port}}/login",
