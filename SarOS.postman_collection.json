@@ -1,14 +1,14 @@
 {
 	"info": {
 		"name": "SarOS",
-		"_postman_id": "860c0b15-e018-17a9-328e-6594038dd391",
+		"_postman_id": "e66ab121-be9e-1068-d9d4-7d0630779cd2",
 		"description": "Drone stuff",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
 			"name": "Drone",
-			"description": "",
+			"description": null,
 			"item": [
 				{
 					"name": "Register Drone",
@@ -22,7 +22,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"description\" : \"fixed-wing, 4\\\" blades\"\n}"
+							"raw": "{\n  \"description\" : \"fixed-wing, 4\\\" blades\"\n}"
 						},
 						"url": {
 							"raw": "{{url}}:{{port}}/register_drone",
@@ -34,7 +34,7 @@
 								"register_drone"
 							]
 						},
-						"description": ""
+						"description": null
 					},
 					"response": []
 				},
@@ -43,7 +43,10 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "{{url}}:{{port}}/get_user_drones",
 							"host": [
@@ -54,7 +57,7 @@
 								"get_user_drones"
 							]
 						},
-						"description": ""
+						"description": null
 					},
 					"response": []
 				},
@@ -63,7 +66,10 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "{{url}}:{{port}}/get_user_info",
 							"host": [
@@ -74,7 +80,7 @@
 								"get_user_info"
 							]
 						},
-						"description": ""
+						"description": null
 					},
 					"response": []
 				},
@@ -83,7 +89,10 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "{{url}}:{{port}}/get_live_user_drones",
 							"host": [
@@ -94,7 +103,7 @@
 								"get_live_user_drones"
 							]
 						},
-						"description": ""
+						"description": null
 					},
 					"response": []
 				},
@@ -110,7 +119,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"id\" : \"d27c0d1f-c3fb-4314-815b-c1b25d37196c\"\n}"
+							"raw": "{\n  \"id\" : \"d27c0d1f-c3fb-4314-815b-c1b25d37196c\"\n}"
 						},
 						"url": {
 							"raw": "{{url}}:{{port}}/delete_drone",
@@ -122,7 +131,7 @@
 								"delete_drone"
 							]
 						},
-						"description": ""
+						"description": null
 					},
 					"response": []
 				},
@@ -138,7 +147,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"drone_id\" : \"293270fa-7710-49f3-a7e6-258122ce56f5\"\n}"
+							"raw": "{\n  \"drone_id\" : \"293270fa-7710-49f3-a7e6-258122ce56f5\"\n}"
 						},
 						"url": {
 							"raw": "{{url}}:{{port}}/get_drones_past_missions",
@@ -150,7 +159,32 @@
 								"get_drones_past_missions"
 							]
 						},
-						"description": ""
+						"description": null
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Drones V1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}:{{port}}/api/v1/get_user_drones",
+							"host": [
+								"{{url}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"v1",
+								"get_user_drones"
+							]
+						},
+						"description": "This version also includes color,type, number of blades and manufacturer of the drones."
 					},
 					"response": []
 				}
@@ -158,7 +192,7 @@
 		},
 		{
 			"name": "Mission",
-			"description": "",
+			"description": null,
 			"item": [
 				{
 					"name": "Register Mission",
@@ -172,7 +206,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"title\" : \"Burger Bowl\",\n\t\"area\" : {\n\t  \"type\": \"FeatureCollection\",\n\t  \"features\": [\n\t    {\n\t      \"type\": \"Feature\",\n\t      \"geometry\": {\n\t        \"type\": \"Polygon\",\n\t        \"coordinates\": \n\t          [\n\t            [\n\t              -84.40331608057022,\n\t              33.77956869005058\n\t            ],\n\t            [\n\t              -84.4034045934677,\n\t              33.77871482330934\n\t            ],\n\t            [\n\t              -84.40279841423033,\n\t              33.778752723580226\n\t            ],\n\t            [\n\t              -84.40222710371017,\n\t              33.77914287245249\n\t            ],\n\t            [\n\t              -84.40258651971817,\n\t              33.77951518429068\n\t            ],\n\t            [\n\t              -84.40331608057022,\n\t              33.77956869005058\n\t            ]\n\t          ]\n\t      },\n\t      \"properties\": {}\n\t    }\n\t  ]\n\t},\n\t\"description\" : \"Last scene in a cornfield. We're looking for a 5-6 male, caucasian wearing denim and plaid.\",\n\t\"starts_at\": \"10/23/17\",\n\t\"ends_at\": \"10/24/17\"\n}"
+							"raw": "{\n  \"title\" : \"Burger Bowl\",\n  \"area\" : {\n    \"type\": \"FeatureCollection\",\n    \"features\": [\n      {\n        \"type\": \"Feature\",\n        \"geometry\": {\n          \"type\": \"Polygon\",\n          \"coordinates\": \n            [\n              [\n                -84.40331608057022,\n                33.77956869005058\n              ],\n              [\n                -84.4034045934677,\n                33.77871482330934\n              ],\n              [\n                -84.40279841423033,\n                33.778752723580226\n              ],\n              [\n                -84.40222710371017,\n                33.77914287245249\n              ],\n              [\n                -84.40258651971817,\n                33.77951518429068\n              ],\n              [\n                -84.40331608057022,\n                33.77956869005058\n              ]\n            ]\n        },\n        \"properties\": {}\n      }\n    ]\n  },\n  \"description\" : \"Last scene in a cornfield. We're looking for a 5-6 male, caucasian wearing denim and plaid.\",\n  \"starts_at\": \"10/23/17\",\n  \"ends_at\": \"10/24/17\"\n}"
 						},
 						"url": {
 							"raw": "{{url}}:{{port}}/register_mission",
@@ -184,7 +218,7 @@
 								"register_mission"
 							]
 						},
-						"description": ""
+						"description": null
 					},
 					"response": []
 				},
@@ -200,7 +234,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"mission_id\" : \"7ed57c2e-a180-4e16-93a1-5c6de541a408\"\n}"
+							"raw": "{\n  \"mission_id\" : \"7ed57c2e-a180-4e16-93a1-5c6de541a408\"\n}"
 						},
 						"url": {
 							"raw": "{{url}}:{{port}}/get_mission_drones",
@@ -212,7 +246,7 @@
 								"get_mission_drones"
 							]
 						},
-						"description": ""
+						"description": null
 					},
 					"response": []
 				},
@@ -228,7 +262,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"mission_id\" : \"54248bd4-d917-4a1a-9b52-11def2c4930b\"\n}"
+							"raw": "{\n  \"mission_id\" : \"54248bd4-d917-4a1a-9b52-11def2c4930b\"\n}"
 						},
 						"url": {
 							"raw": "{{url}}:{{port}}/get_live_drones",
@@ -240,7 +274,7 @@
 								"get_live_drones"
 							]
 						},
-						"description": ""
+						"description": null
 					},
 					"response": []
 				},
@@ -256,7 +290,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"mission_id\" : \"4ef49c03-7fde-47d5-816e-81ac07eee0da\"\n}"
+							"raw": "{\n  \"mission_id\" : \"4ef49c03-7fde-47d5-816e-81ac07eee0da\"\n}"
 						},
 						"url": {
 							"raw": "{{url}}:{{port}}/get_mission_info",
@@ -268,7 +302,7 @@
 								"get_mission_info"
 							]
 						},
-						"description": ""
+						"description": null
 					},
 					"response": []
 				},
@@ -284,7 +318,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"mission_id\" : \"40119277-490f-4033-a394-9d8edd67afa4\",\n\t\"new_clearance_state\" : \"APPROVED\"\n}"
+							"raw": "{\n  \"mission_id\" : \"40119277-490f-4033-a394-9d8edd67afa4\",\n  \"new_clearance_state\" : \"APPROVED\"\n}"
 						},
 						"url": {
 							"raw": "{{url}}:{{port}}/edit_clearance",
@@ -296,7 +330,7 @@
 								"edit_clearance"
 							]
 						},
-						"description": ""
+						"description": null
 					},
 					"response": []
 				},
@@ -305,7 +339,10 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "{{url}}:{{port}}/get_user_missions",
 							"host": [
@@ -316,7 +353,7 @@
 								"get_user_missions"
 							]
 						},
-						"description": ""
+						"description": null
 					},
 					"response": []
 				},
@@ -328,7 +365,10 @@
 						},
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "{{url}}:{{port}}/get_missions",
 							"host": [
@@ -339,7 +379,7 @@
 								"get_missions"
 							]
 						},
-						"description": ""
+						"description": null
 					},
 					"response": []
 				},
@@ -348,7 +388,10 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "{{url}}:{{port}}/get_current_mission",
 							"host": [
@@ -359,7 +402,7 @@
 								"get_current_mission"
 							]
 						},
-						"description": ""
+						"description": null
 					},
 					"response": []
 				},
@@ -375,7 +418,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"mission_id\" : \"7c0c8672-5ca6-4e6d-b22a-52e16e95d33e\",\n\t\"drone_id\" : \"91f7ba21-6aa7-4a70-bd30-e5bcee97e484\",\n\t\"operator_id\" : \"2e059539-2e78-4c2a-b65e-020f41931ef4\"\n}"
+							"raw": "{\n  \"mission_id\" : \"7c0c8672-5ca6-4e6d-b22a-52e16e95d33e\",\n  \"drone_id\" : \"91f7ba21-6aa7-4a70-bd30-e5bcee97e484\",\n  \"operator_id\" : \"2e059539-2e78-4c2a-b65e-020f41931ef4\"\n}"
 						},
 						"url": {
 							"raw": "{{url}}:{{port}}/add_drone_to_mission",
@@ -387,7 +430,7 @@
 								"add_drone_to_mission"
 							]
 						},
-						"description": ""
+						"description": null
 					},
 					"response": []
 				},
@@ -403,7 +446,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"mission_id\" : \"552f7322-a1de-4c19-a3fd-e22ea1dc2dae\",\n\t\"drone_id\" : \"206322db-1d72-40e5-aaf8-b2940e42a2e6\"\n}"
+							"raw": "{\n  \"mission_id\" : \"552f7322-a1de-4c19-a3fd-e22ea1dc2dae\",\n  \"drone_id\" : \"206322db-1d72-40e5-aaf8-b2940e42a2e6\"\n}"
 						},
 						"url": {
 							"raw": "{{url}}:{{port}}/remove_drone_from_mission",
@@ -415,7 +458,7 @@
 								"remove_drone_from_mission"
 							]
 						},
-						"description": ""
+						"description": null
 					},
 					"response": []
 				},
@@ -431,7 +474,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"mission_id\" : \"123\"\n}"
+							"raw": "{\n  \"mission_id\" : \"123\"\n}"
 						},
 						"url": {
 							"raw": "{{url}}:{{port}}/start_mission",
@@ -443,7 +486,7 @@
 								"start_mission"
 							]
 						},
-						"description": ""
+						"description": null
 					},
 					"response": []
 				},
@@ -459,7 +502,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"mission_id\" : \"e4ca934d-988d-4a45-9139-c719dcfb491a\"\n}"
+							"raw": "{\n  \"mission_id\" : \"e4ca934d-988d-4a45-9139-c719dcfb491a\"\n}"
 						},
 						"url": {
 							"raw": "{{url}}:{{port}}/end_mission",
@@ -487,7 +530,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"mission_id\" : \"7ed57c2e-a180-4e16-93a1-5c6de541a408\",\n\t\"area\" : {\n\t  \"type\": \"FeatureCollection\",\n\t  \"features\": [\n\t    {\n\t      \"type\": \"Feature\",\n\t      \"geometry\": {\n\t        \"type\": \"Polygon\",\n\t        \"coordinates\": [\n\t          [\n\t            [\n\t              -80.98382949829102,\n\t              30.040566430584597\n\t            ],\n\t            [\n\t              -79.55560684204102,\n\t              30.088107753367257\n\t            ],\n\t            [\n\t              -79.44574356079102,\n\t              29.18094129000178\n\t            ],\n\t            [\n\t              -80.66522598266602,\n\t              29.477861195816843\n\t            ],\n\t            [\n\t              -80.98382949829102,\n\t              30.040566430584597\n\t            ]\n\t          ]\n\t        ]\n\t      },\n\t      \"properties\": {}\n\t    }\n\t  ]\n\t} \n}"
+							"raw": "{\n  \"mission_id\" : \"7ed57c2e-a180-4e16-93a1-5c6de541a408\",\n  \"area\" : {\n    \"type\": \"FeatureCollection\",\n    \"features\": [\n      {\n        \"type\": \"Feature\",\n        \"geometry\": {\n          \"type\": \"Polygon\",\n          \"coordinates\": [\n            [\n              [\n                -80.98382949829102,\n                30.040566430584597\n              ],\n              [\n                -79.55560684204102,\n                30.088107753367257\n              ],\n              [\n                -79.44574356079102,\n                29.18094129000178\n              ],\n              [\n                -80.66522598266602,\n                29.477861195816843\n              ],\n              [\n                -80.98382949829102,\n                30.040566430584597\n              ]\n            ]\n          ]\n        },\n        \"properties\": {}\n      }\n    ]\n  } \n}"
 						},
 						"url": {
 							"raw": "{{url}}:{{port}}/update_mission_area",
@@ -515,7 +558,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"mission_id\" : \"2c2ba2b2-479b-4f30-ad7d-1759e3e7e21c\",\n\t\"title\": \"South Georgia\",\n\t\"description\": \"Looking for someone in South Georgia\"\n}"
+							"raw": "{\n  \"mission_id\" : \"2c2ba2b2-479b-4f30-ad7d-1759e3e7e21c\",\n  \"title\": \"South Georgia\",\n  \"description\": \"Looking for someone in South Georgia\"\n}"
 						},
 						"url": {
 							"raw": "{{url}}:{{port}}/edit_mission_details",
@@ -543,7 +586,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"mission_id\" : \"7ed57c2e-a180-4e16-93a1-5c6de541a408\"\n}"
+							"raw": "{\n  \"mission_id\" : \"7ed57c2e-a180-4e16-93a1-5c6de541a408\"\n}"
 						},
 						"url": {
 							"raw": "{{url}}:{{port}}/is_mission_live",
@@ -555,7 +598,7 @@
 								"is_mission_live"
 							]
 						},
-						"description": ""
+						"description": null
 					},
 					"response": []
 				}
@@ -563,7 +606,7 @@
 		},
 		{
 			"name": "User",
-			"description": "",
+			"description": null,
 			"item": [
 				{
 					"name": "Register User",
@@ -593,7 +636,7 @@
 								"register_user"
 							]
 						},
-						"description": ""
+						"description": null
 					},
 					"response": []
 				},
@@ -625,7 +668,7 @@
 								"update_user_info"
 							]
 						},
-						"description": ""
+						"description": null
 					},
 					"response": []
 				},
@@ -653,7 +696,7 @@
 								"login"
 							]
 						},
-						"description": ""
+						"description": null
 					},
 					"response": []
 				},
@@ -676,7 +719,7 @@
 								"list_all_users"
 							]
 						},
-						"description": ""
+						"description": null
 					},
 					"response": []
 				},
@@ -699,7 +742,7 @@
 								"get_user_info"
 							]
 						},
-						"description": ""
+						"description": null
 					},
 					"response": []
 				},
@@ -708,7 +751,10 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "{{url}}:{{port}}/logoff",
 							"host": [
@@ -728,7 +774,10 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "{{url}}:{{port}}/isLoggedIn",
 							"host": [
@@ -748,7 +797,10 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "{{url}}:{{port}}/is_government_official",
 							"host": [
