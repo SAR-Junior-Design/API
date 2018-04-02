@@ -1,7 +1,7 @@
 {
 	"info": {
-		"name": "SarOS",
 		"_postman_id": "860c0b15-e018-17a9-328e-6594038dd391",
+		"name": "SarOS",
 		"description": "Drone stuff",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -22,7 +22,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"description\" : \"fixed-wing, 4\\\" blades\"\n}"
+							"raw": "{\n  \"description\" : \"fixed-wing, 4\\\" blades\"\n}"
 						},
 						"url": {
 							"raw": "{{url}}:{{port}}/register_drone",
@@ -33,8 +33,7 @@
 							"path": [
 								"register_drone"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -53,8 +52,7 @@
 							"path": [
 								"get_user_drones"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -73,8 +71,7 @@
 							"path": [
 								"get_user_info"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -93,8 +90,7 @@
 							"path": [
 								"get_live_user_drones"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -110,7 +106,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"id\" : \"d27c0d1f-c3fb-4314-815b-c1b25d37196c\"\n}"
+							"raw": "{\n  \"id\" : \"d27c0d1f-c3fb-4314-815b-c1b25d37196c\"\n}"
 						},
 						"url": {
 							"raw": "{{url}}:{{port}}/delete_drone",
@@ -121,8 +117,7 @@
 							"path": [
 								"delete_drone"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -138,7 +133,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"drone_id\" : \"293270fa-7710-49f3-a7e6-258122ce56f5\"\n}"
+							"raw": "{\n  \"drone_id\" : \"293270fa-7710-49f3-a7e6-258122ce56f5\"\n}"
 						},
 						"url": {
 							"raw": "{{url}}:{{port}}/get_drones_past_missions",
@@ -149,8 +144,7 @@
 							"path": [
 								"get_drones_past_missions"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				}
@@ -172,7 +166,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"title\" : \"SAR Puerto Rico\",\n\t\"area\" : {\n\t  \"type\": \"FeatureCollection\",\n\t  \"features\": [\n\t    {\n\t      \"type\": \"Feature\",\n\t      \"geometry\": {\n\t        \"type\": \"Polygon\",\n\t        \"coordinates\": [\n\t          [\n\t            [\n\t              -80.98382949829102,\n\t              30.040566430584597\n\t            ],\n\t            [\n\t              -79.55560684204102,\n\t              30.088107753367257\n\t            ],\n\t            [\n\t              -79.44574356079102,\n\t              29.18094129000178\n\t            ],\n\t            [\n\t              -80.66522598266602,\n\t              29.477861195816843\n\t            ],\n\t            [\n\t              -80.98382949829102,\n\t              30.040566430584597\n\t            ]\n\t          ]\n\t        ]\n\t      },\n\t      \"properties\": {}\n\t    }\n\t  ]\n\t},\n\t\"description\" : \"This is a search and rescue mission in the alps.\",\n\t\"starts_at\": \"10/23/17\",\n\t\"ends_at\": \"10/24/17\"\n}"
+							"raw": "{\n  \"title\" : \"Venezuela\",\n  \"area\" : {\n    \"type\": \"FeatureCollection\",\n    \"features\": [\n      {\n        \"type\": \"Feature\",\n        \"geometry\": {\n          \"type\": \"Polygon\",\n          \"coordinates\": \n            [\n              [\n                -78.046875,\n                13.581920900545844\n              ],\n              [\n                -73.47656249999999,\n                -3.162455530237848\n              ],\n              [\n                -60.8203125,\n                14.26438308756265\n              ],\n              [\n                -78.046875,\n                13.581920900545844\n              ]\n            ]\n        },\n        \"properties\": {}\n      }\n    ]\n  },\n  \"description\" : \"testing minimap\",\n  \"starts_at\": \"10/23/17\",\n  \"ends_at\": \"10/24/17\"\n}"
 						},
 						"url": {
 							"raw": "{{url}}:{{port}}/register_mission",
@@ -183,8 +177,34 @@
 							"path": [
 								"register_mission"
 							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Missions",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"mission_id\": \"a92d5c59-61d8-4ec9-8ebc-a329f63cb3d6\"\n}"
 						},
-						"description": ""
+						"url": {
+							"raw": "{{url}}:{{port}}/delete_mission",
+							"host": [
+								"{{url}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"delete_mission"
+							]
+						}
 					},
 					"response": []
 				},
@@ -200,7 +220,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"mission_id\" : \"7ed57c2e-a180-4e16-93a1-5c6de541a408\"\n}"
+							"raw": "{\n  \"mission_id\" : \"7ed57c2e-a180-4e16-93a1-5c6de541a408\"\n}"
 						},
 						"url": {
 							"raw": "{{url}}:{{port}}/get_mission_drones",
@@ -211,8 +231,7 @@
 							"path": [
 								"get_mission_drones"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -228,7 +247,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"mission_id\" : \"54248bd4-d917-4a1a-9b52-11def2c4930b\"\n}"
+							"raw": "{\n  \"mission_id\" : \"54248bd4-d917-4a1a-9b52-11def2c4930b\"\n}"
 						},
 						"url": {
 							"raw": "{{url}}:{{port}}/get_live_drones",
@@ -239,8 +258,7 @@
 							"path": [
 								"get_live_drones"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -256,7 +274,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"mission_id\" : \"2c2ba2b2-479b-4f30-ad7d-1759e3e7e21c\"\n}"
+							"raw": "{\n  \"mission_id\" : \"4ef49c03-7fde-47d5-816e-81ac07eee0da\"\n}"
 						},
 						"url": {
 							"raw": "{{url}}:{{port}}/get_mission_info",
@@ -267,8 +285,34 @@
 							"path": [
 								"get_mission_info"
 							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Clearance",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"mission_id\" : \"40119277-490f-4033-a394-9d8edd67afa4\",\n\t\"new_clearance_state\" : \"APPROVED\"\n}"
 						},
-						"description": ""
+						"url": {
+							"raw": "{{url}}:{{port}}/edit_clearance",
+							"host": [
+								"{{url}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"edit_clearance"
+							]
+						}
 					},
 					"response": []
 				},
@@ -287,8 +331,7 @@
 							"path": [
 								"get_user_missions"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -310,8 +353,7 @@
 							"path": [
 								"get_missions"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -330,8 +372,7 @@
 							"path": [
 								"get_current_mission"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -347,7 +388,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"mission_id\" : \"7c0c8672-5ca6-4e6d-b22a-52e16e95d33e\",\n\t\"drone_id\" : \"91f7ba21-6aa7-4a70-bd30-e5bcee97e484\",\n\t\"operator_id\" : \"2e059539-2e78-4c2a-b65e-020f41931ef4\"\n}"
+							"raw": "{\n  \"mission_id\" : \"7c0c8672-5ca6-4e6d-b22a-52e16e95d33e\",\n  \"drone_id\" : \"91f7ba21-6aa7-4a70-bd30-e5bcee97e484\",\n  \"operator_id\" : \"2e059539-2e78-4c2a-b65e-020f41931ef4\"\n}"
 						},
 						"url": {
 							"raw": "{{url}}:{{port}}/add_drone_to_mission",
@@ -358,8 +399,7 @@
 							"path": [
 								"add_drone_to_mission"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -375,7 +415,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"mission_id\" : \"552f7322-a1de-4c19-a3fd-e22ea1dc2dae\",\n\t\"drone_id\" : \"206322db-1d72-40e5-aaf8-b2940e42a2e6\"\n}"
+							"raw": "{\n  \"mission_id\" : \"552f7322-a1de-4c19-a3fd-e22ea1dc2dae\",\n  \"drone_id\" : \"206322db-1d72-40e5-aaf8-b2940e42a2e6\"\n}"
 						},
 						"url": {
 							"raw": "{{url}}:{{port}}/remove_drone_from_mission",
@@ -386,8 +426,7 @@
 							"path": [
 								"remove_drone_from_mission"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -403,7 +442,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"mission_id\" : \"123\"\n}"
+							"raw": "{\n  \"mission_id\" : \"123\"\n}"
 						},
 						"url": {
 							"raw": "{{url}}:{{port}}/start_mission",
@@ -414,8 +453,7 @@
 							"path": [
 								"start_mission"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -431,7 +469,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"mission_id\" : \"e4ca934d-988d-4a45-9139-c719dcfb491a\"\n}"
+							"raw": "{\n  \"mission_id\" : \"e4ca934d-988d-4a45-9139-c719dcfb491a\"\n}"
 						},
 						"url": {
 							"raw": "{{url}}:{{port}}/end_mission",
@@ -459,7 +497,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"mission_id\" : \"7ed57c2e-a180-4e16-93a1-5c6de541a408\",\n\t\"area\" : {\n\t  \"type\": \"FeatureCollection\",\n\t  \"features\": [\n\t    {\n\t      \"type\": \"Feature\",\n\t      \"geometry\": {\n\t        \"type\": \"Polygon\",\n\t        \"coordinates\": [\n\t          [\n\t            [\n\t              -80.98382949829102,\n\t              30.040566430584597\n\t            ],\n\t            [\n\t              -79.55560684204102,\n\t              30.088107753367257\n\t            ],\n\t            [\n\t              -79.44574356079102,\n\t              29.18094129000178\n\t            ],\n\t            [\n\t              -80.66522598266602,\n\t              29.477861195816843\n\t            ],\n\t            [\n\t              -80.98382949829102,\n\t              30.040566430584597\n\t            ]\n\t          ]\n\t        ]\n\t      },\n\t      \"properties\": {}\n\t    }\n\t  ]\n\t} \n}"
+							"raw": "{\n  \"mission_id\" : \"7ed57c2e-a180-4e16-93a1-5c6de541a408\",\n  \"area\" : {\n    \"type\": \"FeatureCollection\",\n    \"features\": [\n      {\n        \"type\": \"Feature\",\n        \"geometry\": {\n          \"type\": \"Polygon\",\n          \"coordinates\": [\n            [\n              [\n                -80.98382949829102,\n                30.040566430584597\n              ],\n              [\n                -79.55560684204102,\n                30.088107753367257\n              ],\n              [\n                -79.44574356079102,\n                29.18094129000178\n              ],\n              [\n                -80.66522598266602,\n                29.477861195816843\n              ],\n              [\n                -80.98382949829102,\n                30.040566430584597\n              ]\n            ]\n          ]\n        },\n        \"properties\": {}\n      }\n    ]\n  } \n}"
 						},
 						"url": {
 							"raw": "{{url}}:{{port}}/update_mission_area",
@@ -487,7 +525,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"mission_id\" : \"2c2ba2b2-479b-4f30-ad7d-1759e3e7e21c\",\n\t\"title\": \"South Georgia\",\n\t\"description\": \"Looking for someone in South Georgia\"\n}"
+							"raw": "{\n  \"mission_id\" : \"2c2ba2b2-479b-4f30-ad7d-1759e3e7e21c\",\n  \"title\": \"South Georgia\",\n  \"description\": \"Looking for someone in South Georgia\"\n}"
 						},
 						"url": {
 							"raw": "{{url}}:{{port}}/edit_mission_details",
@@ -515,7 +553,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"mission_id\" : \"7ed57c2e-a180-4e16-93a1-5c6de541a408\"\n}"
+							"raw": "{\n  \"mission_id\" : \"7ed57c2e-a180-4e16-93a1-5c6de541a408\"\n}"
 						},
 						"url": {
 							"raw": "{{url}}:{{port}}/is_mission_live",
@@ -526,8 +564,7 @@
 							"path": [
 								"is_mission_live"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				}
@@ -553,7 +590,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"email\": \"samcrane8@gmail.com\",\n  \"password\" : \"lawrence\",\n  \"name\" : \"Sam\",\n  \"account_type\" : \"operator\"\n}"
+							"raw": "{\n  \"email\": \"samcrane8@gmail.com\",\n  \"password\" : \"lawrence\",\n  \"name\" : \"Sam\"\n}"
 						},
 						"url": {
 							"raw": "{{url}}:{{port}}/register_user",
@@ -564,8 +601,7 @@
 							"path": [
 								"register_user"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -585,7 +621,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"name\": \"Samuel Crane\"\n}"
+							"raw": "{\n  \"name\": \"Sam Crane\"\n}"
 						},
 						"url": {
 							"raw": "{{url}}:{{port}}/update_user_info",
@@ -596,8 +632,7 @@
 							"path": [
 								"update_user_info"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -624,8 +659,7 @@
 							"path": [
 								"login"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -647,8 +681,7 @@
 							"path": [
 								"list_all_users"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -670,8 +703,7 @@
 							"path": [
 								"get_user_info"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
