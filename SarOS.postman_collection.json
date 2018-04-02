@@ -33,8 +33,7 @@
 							"path": [
 								"register_drone"
 							]
-						},
-						"description": null
+						}
 					},
 					"response": []
 				},
@@ -56,8 +55,7 @@
 							"path": [
 								"get_user_drones"
 							]
-						},
-						"description": null
+						}
 					},
 					"response": []
 				},
@@ -79,8 +77,7 @@
 							"path": [
 								"get_user_info"
 							]
-						},
-						"description": null
+						}
 					},
 					"response": []
 				},
@@ -102,8 +99,7 @@
 							"path": [
 								"get_live_user_drones"
 							]
-						},
-						"description": null
+						}
 					},
 					"response": []
 				},
@@ -130,8 +126,7 @@
 							"path": [
 								"delete_drone"
 							]
-						},
-						"description": null
+						}
 					},
 					"response": []
 				},
@@ -207,6 +202,7 @@
 						"body": {
 							"mode": "raw",
 							"raw": "{\n  \"title\" : \"Burger Bowl\",\n  \"area\" : {\n    \"type\": \"FeatureCollection\",\n    \"features\": [\n      {\n        \"type\": \"Feature\",\n        \"geometry\": {\n          \"type\": \"Polygon\",\n          \"coordinates\": \n            [\n              [\n                -84.40331608057022,\n                33.77956869005058\n              ],\n              [\n                -84.4034045934677,\n                33.77871482330934\n              ],\n              [\n                -84.40279841423033,\n                33.778752723580226\n              ],\n              [\n                -84.40222710371017,\n                33.77914287245249\n              ],\n              [\n                -84.40258651971817,\n                33.77951518429068\n              ],\n              [\n                -84.40331608057022,\n                33.77956869005058\n              ]\n            ]\n        },\n        \"properties\": {}\n      }\n    ]\n  },\n  \"description\" : \"Last scene in a cornfield. We're looking for a 5-6 male, caucasian wearing denim and plaid.\",\n  \"starts_at\": \"10/23/17\",\n  \"ends_at\": \"10/24/17\"\n}"
+
 						},
 						"url": {
 							"raw": "{{url}}:{{port}}/register_mission",
@@ -217,8 +213,34 @@
 							"path": [
 								"register_mission"
 							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Missions",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"mission_id\": \"a92d5c59-61d8-4ec9-8ebc-a329f63cb3d6\"\n}"
 						},
-						"description": null
+						"url": {
+							"raw": "{{url}}:{{port}}/delete_mission",
+							"host": [
+								"{{url}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"delete_mission"
+							]
+						}
 					},
 					"response": []
 				},
@@ -247,6 +269,7 @@
 							]
 						},
 						"description": null
+
 					},
 					"response": []
 				},
@@ -275,6 +298,7 @@
 							]
 						},
 						"description": null
+
 					},
 					"response": []
 				},
@@ -301,6 +325,23 @@
 							"path": [
 								"get_mission_info"
 							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Clearance",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"mission_id\" : \"40119277-490f-4033-a394-9d8edd67afa4\",\n\t\"new_clearance_state\" : \"APPROVED\"\n}"
 						},
 						"description": null
 					},
@@ -624,7 +665,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"email\": \"samcrane8@gmail.com\",\n  \"password\" : \"lawrence\",\n  \"name\" : \"Sam\",\n  \"account_type\" : \"operator\"\n}"
+							"raw": "{\n  \"email\": \"samcrane8@gmail.com\",\n  \"password\" : \"lawrence\",\n  \"name\" : \"Sam\"\n}"
 						},
 						"url": {
 							"raw": "{{url}}:{{port}}/register_user",
@@ -656,7 +697,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"name\": \"Samuel Crane\"\n}"
+							"raw": "{\n  \"name\": \"Sam Crane\"\n}"
 						},
 						"url": {
 							"raw": "{{url}}:{{port}}/update_user_info",
