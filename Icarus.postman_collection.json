@@ -38,7 +38,7 @@
 					"response": []
 				},
 				{
-					"name": "Register Drone V1_1",
+					"name": "Register Drone (V1_1)",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -376,6 +376,80 @@
 					"response": []
 				},
 				{
+					"name": "Get Active Missions",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{url}}/v1_1/get_active_missions",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1_1",
+								"get_active_missions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Past Missions",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{url}}/v1_1/get_past_missions",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1_1",
+								"get_past_missions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Missions (V1.1)",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"starts_at\": \"2013-09-28 20:30:55\",\n\t\"ends_at\": \"2018-09-28 20:30:55\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/v1_1/get_missions",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1_1",
+								"get_missions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Get Current Mission",
 					"request": {
 						"method": "GET",
@@ -673,6 +747,33 @@
 					"response": []
 				},
 				{
+					"name": "Login (V1.1)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"samcrane8@gmail.com\",\n  \"password\" : \"lawrence\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/v1_1/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1_1",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "List All Users",
 					"request": {
 						"method": "GET",
@@ -728,6 +829,26 @@
 							],
 							"path": [
 								"v1_0",
+								"logoff"
+							]
+						},
+						"description": "This forces the session to end."
+					},
+					"response": []
+				},
+				{
+					"name": "Logoff (V1.1)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{url}}/v1_1/logoff",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1_1",
 								"logoff"
 							]
 						},
