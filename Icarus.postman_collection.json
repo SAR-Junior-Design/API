@@ -206,6 +206,33 @@
 					"response": []
 				},
 				{
+					"name": "Register Mission (V1.1)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\" : \"Venezuela\",\n  \"area\" : {\n    \"type\": \"FeatureCollection\",\n    \"features\": [\n      {\n        \"type\": \"Feature\",\n        \"geometry\": {\n          \"type\": \"Polygon\",\n          \"coordinates\": \n            [\n              [\n                -78.046875,\n                13.581920900545844\n              ],\n              [\n                -73.47656249999999,\n                -3.162455530237848\n              ],\n              [\n                -60.8203125,\n                14.26438308756265\n              ],\n              [\n                -78.046875,\n                13.581920900545844\n              ]\n            ]\n        },\n        \"properties\": {}\n      }\n    ]\n  },\n  \"description\" : \"testing minimap\",\n  \"starts_at\": \"10/23/17\",\n  \"ends_at\": \"10/24/17\",\n  \"type\": \"commercial\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/v1_1/register_mission",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1_1",
+								"register_mission"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Delete Missions",
 					"request": {
 						"method": "POST",
@@ -444,6 +471,36 @@
 							"path": [
 								"v1_1",
 								"get_missions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Possible Mission Conflicts",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"starts_at\": \"2013-09-28 20:30:55\",\n\t\"ends_at\": \"2018-09-28 20:30:55\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/v1_1/get_possible_mission_conflicts",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1_1",
+								"get_possible_mission_conflicts"
 							]
 						}
 					},
