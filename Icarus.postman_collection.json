@@ -325,11 +325,39 @@
 							"raw": "{\n  \"mission_id\" : \"4ef49c03-7fde-47d5-816e-81ac07eee0da\"\n}"
 						},
 						"url": {
-							"raw": "{{url}}/get_mission_info",
+							"raw": "{{url}}/v1_0/get_mission_info",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
+								"v1_0",
+								"get_mission_info"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Mission Info (V1.1)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"mission_id\" : \"cb1b8e24-8baf-4273-899d-1d827e6c588f\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/v1_1/get_mission_info",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1_1",
 								"get_mission_info"
 							]
 						}
@@ -676,6 +704,34 @@
 								"{{url}}"
 							],
 							"path": [
+								"edit_mission_details"
+							]
+						},
+						"description": "Allows user to edit the details of a mission."
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Mission Details (V1.1)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"mission_id\" : \"8539f62a-8b3b-4474-9597-595f6785dbc7\",\n  \"title\": \"South Georgia\",\n  \"description\": \"Looking for someone in South Georgia\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/v1_1/edit_mission_details",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1_1",
 								"edit_mission_details"
 							]
 						},
