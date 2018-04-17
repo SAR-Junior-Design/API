@@ -22,7 +22,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"description\" : \"fixed-wing, 4\\\" blades\"\n}"
+							"raw": "{\n  \"description\" : \"fixed-wing, 4\\\" blades\",\n  \"manufacturer\" : \"DJI\",\n  \"type\": \"hover\",\n  \"color\": \"Green\",\n  \"number_of_blades\": 2\n}"
 						},
 						"url": {
 							"raw": "{{url}}/v1_0/register_drone",
@@ -31,33 +31,6 @@
 							],
 							"path": [
 								"v1_0",
-								"register_drone"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Register Drone (V1_1)",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"description\" : \"fixed-wing, 4\\\" blades\",\n  \"manufacturer\" : \"DJI\",\n  \"type\" : \"quadrotor\",\n  \"color\" : \"blue\",\n  \"number_of_blades\" : 4\n}"
-						},
-						"url": {
-							"raw": "{{url}}/v1_1/register_drone",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"v1_1",
 								"register_drone"
 							]
 						}
@@ -84,42 +57,6 @@
 					"response": []
 				},
 				{
-					"name": "Get User Info",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"body": {},
-						"url": {
-							"raw": "{{url}}/get_user_info",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"get_user_info"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "[TODO] Get Live User Drones",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"body": {},
-						"url": {
-							"raw": "{{url}}/get_live_user_drones",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"get_live_user_drones"
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "Delete Drone",
 					"request": {
 						"method": "POST",
@@ -131,7 +68,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"id\" : \"c7726d73-b4f8-4b9c-bf56-b225afa4e91b\"\n}"
+							"raw": "[{ \"id\" : \"3712bfee-7539-4566-803a-d03dfcaab2e5\" }]"
 						},
 						"url": {
 							"raw": "{{url}}/v1_0/delete_drone",
@@ -179,33 +116,6 @@
 			"description": "",
 			"item": [
 				{
-					"name": "Register Mission",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"title\" : \"Venezuela\",\n  \"area\" : {\n    \"type\": \"FeatureCollection\",\n    \"features\": [\n      {\n        \"type\": \"Feature\",\n        \"geometry\": {\n          \"type\": \"Polygon\",\n          \"coordinates\": \n            [\n              [\n                -78.046875,\n                13.581920900545844\n              ],\n              [\n                -73.47656249999999,\n                -3.162455530237848\n              ],\n              [\n                -60.8203125,\n                14.26438308756265\n              ],\n              [\n                -78.046875,\n                13.581920900545844\n              ]\n            ]\n        },\n        \"properties\": {}\n      }\n    ]\n  },\n  \"description\" : \"testing minimap\",\n  \"starts_at\": \"10/23/17\",\n  \"ends_at\": \"10/24/17\"\n}"
-						},
-						"url": {
-							"raw": "{{url}}/v1_0/register_mission",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"v1_0",
-								"register_mission"
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "Register Mission (V1.1)",
 					"request": {
 						"method": "POST",
@@ -217,7 +127,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"title\" : \"Venezuela\",\n  \"area\" : {\n    \"type\": \"FeatureCollection\",\n    \"features\": [\n      {\n        \"type\": \"Feature\",\n        \"geometry\": {\n          \"type\": \"Polygon\",\n          \"coordinates\": \n            [\n              [\n                -78.046875,\n                13.581920900545844\n              ],\n              [\n                -73.47656249999999,\n                -3.162455530237848\n              ],\n              [\n                -60.8203125,\n                14.26438308756265\n              ],\n              [\n                -78.046875,\n                13.581920900545844\n              ]\n            ]\n        },\n        \"properties\": {}\n      }\n    ]\n  },\n  \"description\" : \"testing minimap\",\n  \"starts_at\": \"10/23/17\",\n  \"ends_at\": \"10/24/17\",\n  \"type\": \"commercial\"\n}"
+							"raw": "{\n  \"title\" : \"Venezuela\",\n  \"area\" : {\n    \"type\": \"FeatureCollection\",\n    \"features\": [\n      {\n        \"type\": \"Feature\",\n        \"geometry\": {\n          \"type\": \"Polygon\",\n          \"coordinates\": \n            [\n              [\n                -78.046875,\n                13.581920900545844\n              ],\n              [\n                -73.47656249999999,\n                -3.162455530237848\n              ],\n              [\n                -60.8203125,\n                14.26438308756265\n              ],\n              [\n                -78.046875,\n                13.581920900545844\n              ]\n            ]\n        },\n        \"properties\": {}\n      }\n    ]\n  },\n  \"description\" : \"testing minimap\",\n  \"starts_at\": \"10/23/19\",\n  \"ends_at\": \"10/24/19\",\n  \"type\": \"commercial\"\n}"
 						},
 						"url": {
 							"raw": "{{url}}/v1_1/register_mission",
@@ -285,59 +195,6 @@
 					"response": []
 				},
 				{
-					"name": "[TODO] Get Live Drones",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"mission_id\" : \"54248bd4-d917-4a1a-9b52-11def2c4930b\"\n}"
-						},
-						"url": {
-							"raw": "{{url}}/get_live_drones",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"get_live_drones"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get Mission Info",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"mission_id\" : \"4ef49c03-7fde-47d5-816e-81ac07eee0da\"\n}"
-						},
-						"url": {
-							"raw": "{{url}}/v1_0/get_mission_info",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"v1_0",
-								"get_mission_info"
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "Get Mission Info (V1.1)",
 					"request": {
 						"method": "POST",
@@ -349,7 +206,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"mission_id\" : \"cb1b8e24-8baf-4273-899d-1d827e6c588f\"\n}"
+							"raw": "{\n  \"mission_id\" : \"5ef7145d-1137-4513-b254-33030b456be0\"\n}"
 						},
 						"url": {
 							"raw": "{{url}}/v1_1/get_mission_info",
@@ -376,14 +233,15 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"mission_id\" : \"40119277-490f-4033-a394-9d8edd67afa4\",\n\t\"new_clearance_state\" : \"APPROVED\"\n}"
+							"raw": "{\n\t\"mission_id\" : \"82e30917-be94-458e-b80e-3515b4d26615\",\n\t\"new_clearance_state\" : \"APPROVED\",\n\t\"message\": \"This is something.\"\n}"
 						},
 						"url": {
-							"raw": "{{url}}/edit_clearance",
+							"raw": "{{url}}/v1_1/edit_clearance",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
+								"v1_1",
 								"edit_clearance"
 							]
 						}
@@ -391,47 +249,7 @@
 					"response": []
 				},
 				{
-					"name": "Get User Missions",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"body": {},
-						"url": {
-							"raw": "{{url}}/get_user_missions",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"get_user_missions"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get Missions",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [],
-						"body": {},
-						"url": {
-							"raw": "{{url}}/v1_0/get_missions",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"v1_0",
-								"get_missions"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get Active Missions",
+					"name": "Get Active Missions (V1.1)",
 					"request": {
 						"auth": {
 							"type": "noauth"
@@ -453,7 +271,29 @@
 					"response": []
 				},
 				{
-					"name": "Get Past Missions",
+					"name": "Get Upcoming Missions (V1.1)",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{url}}/v1_1/get_upcoming_missions",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1_1",
+								"get_upcoming_missions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Past Missions (V1.1)",
 					"request": {
 						"auth": {
 							"type": "noauth"
@@ -489,7 +329,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"starts_at\": \"2013-09-28 20:30:55\",\n\t\"ends_at\": \"2018-09-28 20:30:55\"\n}"
+							"raw": "{\n\t\"starts_at\": \"2013-09-28 20:30:55\",\n\t\"ends_at\": \"2020-09-28 20:30:55\"\n}"
 						},
 						"url": {
 							"raw": "{{url}}/v1_1/get_missions",
@@ -519,34 +359,16 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"starts_at\": \"2013-09-28 20:30:55\",\n\t\"ends_at\": \"2018-09-28 20:30:55\"\n}"
+							"raw": "{\n\t\"starts_at\": \"2015-04-05 20:30:55\",\n\t\"ends_at\": \"2020-09-28 20:30:55\"\n}"
 						},
 						"url": {
-							"raw": "{{url}}/v1_1/get_possible_mission_conflicts",
+							"raw": "{{url}}/v1_0/get_possible_mission_conflicts",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
-								"v1_1",
+								"v1_0",
 								"get_possible_mission_conflicts"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get Current Mission",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"body": {},
-						"url": {
-							"raw": "{{url}}/get_current_mission",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"get_current_mission"
 							]
 						}
 					},
@@ -605,113 +427,6 @@
 					"response": []
 				},
 				{
-					"name": "Start Mission",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"mission_id\" : \"123\"\n}"
-						},
-						"url": {
-							"raw": "{{url}}/start_mission",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"start_mission"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "End Mission",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"mission_id\" : \"e4ca934d-988d-4a45-9139-c719dcfb491a\"\n}"
-						},
-						"url": {
-							"raw": "{{url}}/end_mission",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"end_mission"
-							]
-						},
-						"description": "End a mission, setting it's timestamp to the current time."
-					},
-					"response": []
-				},
-				{
-					"name": "Update Mission Area",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"mission_id\" : \"7ed57c2e-a180-4e16-93a1-5c6de541a408\",\n  \"area\" : {\n    \"type\": \"FeatureCollection\",\n    \"features\": [\n      {\n        \"type\": \"Feature\",\n        \"geometry\": {\n          \"type\": \"Polygon\",\n          \"coordinates\": [\n            [\n              [\n                -80.98382949829102,\n                30.040566430584597\n              ],\n              [\n                -79.55560684204102,\n                30.088107753367257\n              ],\n              [\n                -79.44574356079102,\n                29.18094129000178\n              ],\n              [\n                -80.66522598266602,\n                29.477861195816843\n              ],\n              [\n                -80.98382949829102,\n                30.040566430584597\n              ]\n            ]\n          ]\n        },\n        \"properties\": {}\n      }\n    ]\n  } \n}"
-						},
-						"url": {
-							"raw": "{{url}}/update_mission_area",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"update_mission_area"
-							]
-						},
-						"description": "Allows user to add new mission area. Structured as GeoJSON"
-					},
-					"response": []
-				},
-				{
-					"name": "Edit Mission Details",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"mission_id\" : \"2c2ba2b2-479b-4f30-ad7d-1759e3e7e21c\",\n  \"title\": \"South Georgia\",\n  \"description\": \"Looking for someone in South Georgia\"\n}"
-						},
-						"url": {
-							"raw": "{{url}}/edit_mission_details",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"edit_mission_details"
-							]
-						},
-						"description": "Allows user to edit the details of a mission."
-					},
-					"response": []
-				},
-				{
 					"name": "Edit Mission Details (V1.1)",
 					"request": {
 						"method": "POST",
@@ -738,32 +453,6 @@
 						"description": "Allows user to edit the details of a mission."
 					},
 					"response": []
-				},
-				{
-					"name": "Is Mission Live",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"mission_id\" : \"7ed57c2e-a180-4e16-93a1-5c6de541a408\"\n}"
-						},
-						"url": {
-							"raw": "{{url}}/is_mission_live",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"is_mission_live"
-							]
-						}
-					},
-					"response": []
 				}
 			]
 		},
@@ -787,15 +476,15 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"email\": \"samcrane8@gmail.com\",\n  \"password\" : \"lawrence\",\n  \"name\" : \"Sam\"\n}"
+							"raw": "{\n  \"email\": \"admin@password.com\",\n  \"password\" : \"password\",\n  \"name\" : \"Admin\"\n}"
 						},
 						"url": {
-							"raw": "{{url}}/v1_0/register_user",
+							"raw": "{{url}}/v1_1/register_user",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
-								"v1_0",
+								"v1_1",
 								"register_user"
 							]
 						}
@@ -818,42 +507,16 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"name\": \"Sam Crane\"\n}"
+							"raw": "{\n  \"name\": \"Sam Crane\",\n  \"picture\": \"imgur.com\"\n}"
 						},
 						"url": {
-							"raw": "{{url}}/update_user_info",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"update_user_info"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Login",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"email\": \"samcrane8@gmail.com\",\n  \"password\" : \"lawrence\"\n}"
-						},
-						"url": {
-							"raw": "{{url}}/v1_0/login",
+							"raw": "{{url}}/v1_0/update_user_info",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"v1_0",
-								"login"
+								"update_user_info"
 							]
 						}
 					},
@@ -896,11 +559,12 @@
 							"raw": "]"
 						},
 						"url": {
-							"raw": "{{url}}/list_all_users",
+							"raw": "{{url}}/v1_0/list_all_users",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
+								"v1_0",
 								"list_all_users"
 							]
 						}
@@ -926,26 +590,6 @@
 								"get_user_info"
 							]
 						}
-					},
-					"response": []
-				},
-				{
-					"name": "Logoff",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"body": {},
-						"url": {
-							"raw": "{{url}}/v1_0/logoff",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"v1_0",
-								"logoff"
-							]
-						},
-						"description": "This forces the session to end."
 					},
 					"response": []
 				},
@@ -996,11 +640,12 @@
 						"header": [],
 						"body": {},
 						"url": {
-							"raw": "{{url}}/is_government_official",
+							"raw": "{{url}}/v1_0/is_government_official",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
+								"v1_0",
 								"is_government_official"
 							]
 						},
@@ -1009,6 +654,11 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "Document",
+			"description": "",
+			"item": []
 		}
 	]
 }
