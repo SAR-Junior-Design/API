@@ -233,7 +233,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"mission_id\" : \"82e30917-be94-458e-b80e-3515b4d26615\",\n\t\"new_clearance_state\" : \"APPROVED\",\n\t\"message\": \"This is something.\"\n}"
+							"raw": "{\n\t\"mission_id\" : \"958040c1-e250-46b0-95a6-015b5fe17017\",\n\t\"new_clearance_state\" : \"APPROVED\",\n\t\"message\": \"testing messaging.\"\n}"
 						},
 						"url": {
 							"raw": "{{url}}/v1_1/edit_clearance",
@@ -476,7 +476,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"email\": \"admin@password.com\",\n  \"password\" : \"password\",\n  \"name\" : \"Admin\"\n}"
+							"raw": "{\n  \"email\": \"samcrane7@gmail.com\",\n  \"password\" : \"lawrence\",\n  \"name\" : \"operator [Sam]\"\n}"
 						},
 						"url": {
 							"raw": "{{url}}/v1_1/register_user",
@@ -658,7 +658,165 @@
 		{
 			"name": "Document",
 			"description": "",
-			"item": []
+			"item": [
+				{
+					"name": "Get User Documents",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/v1_0/get_user_documents",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1_0",
+								"get_user_documents"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Document",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"location\": \"folder\",\n\t\"document_type\": \"pdf\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/v1_0/add_document",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1_0",
+								"add_document"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Document",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"document_id\": \"6bc53823-f0f5-4e48-b9b4-19a9d8680535\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/v1_0/delete_document",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1_0",
+								"delete_document"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Document From Id",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"document_id\": \"34786a84-cd74-4bff-bc56-8907f4e8ae21\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/v1_0/get_document_from_id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1_0",
+								"get_document_from_id"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Documents From Type",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"document_type\": \"pdf\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/v1_0/get_documents_from_type",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1_0",
+								"get_documents_from_type"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Document",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"location\": \"folder\",\n\t\"document_type\": \"pdf\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/v1_0/add_document",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1_0",
+								"add_document"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
