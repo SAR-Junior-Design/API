@@ -1,822 +1,735 @@
 {
 	"info": {
-		"_postman_id": "860c0b15-e018-17a9-328e-6594038dd391",
-		"name": "Icarus",
-		"description": "Drone stuff",
+		"_postman_id": "79504d2e-1754-4147-a333-0a5465a3e5cc",
+		"name": "Icarus-Django",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "Drone",
-			"description": "",
-			"item": [
-				{
-					"name": "Register Drone",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"description\" : \"fixed-wing, 4\\\" blades\",\n  \"manufacturer\" : \"DJI\",\n  \"type\": \"hover\",\n  \"color\": \"Green\",\n  \"number_of_blades\": 2\n}"
-						},
-						"url": {
-							"raw": "{{url}}/v1_0/register_drone",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"v1_0",
-								"register_drone"
-							]
+			"name": "Register Mission",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
 						}
-					},
-					"response": []
+					]
 				},
-				{
-					"name": "Get User Drones",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"body": {},
-						"url": {
-							"raw": "{{url}}/v1_0/get_user_drones",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"v1_0",
-								"get_user_drones"
-							]
-						}
-					},
-					"response": []
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"title\" : \"Venezuela\",\n  \"area\" : {\n    \"type\": \"FeatureCollection\",\n    \"features\": [\n      {\n        \"type\": \"Feature\",\n        \"geometry\": {\n          \"type\": \"Polygon\",\n          \"coordinates\": \n            [\n              [\n                -78.046875,\n                13.581920900545844\n              ],\n              [\n                -73.47656249999999,\n                -3.162455530237848\n              ],\n              [\n                -60.8203125,\n                14.26438308756265\n              ],\n              [\n                -78.046875,\n                13.581920900545844\n              ]\n            ]\n        },\n        \"properties\": {}\n      }\n    ]\n  },\n  \"description\" : \"testing minimap\",\n  \"starts_at\": \"2011-10-12T11:45:00+05\",\n  \"ends_at\": \"2011-11-12T11:45:00+05\",\n  \"type\": \"commercial\"\n}"
 				},
-				{
-					"name": "Delete Drone",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "[{ \"id\" : \"3712bfee-7539-4566-803a-d03dfcaab2e5\" }]"
-						},
-						"url": {
-							"raw": "{{url}}/v1_0/delete_drone",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"v1_0",
-								"delete_drone"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get Drones Past Missions",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"drone_id\" : \"293270fa-7710-49f3-a7e6-258122ce56f5\"\n}"
-						},
-						"url": {
-							"raw": "{{url}}/get_drones_past_missions",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"get_drones_past_missions"
-							]
-						}
-					},
-					"response": []
+				"url": {
+					"raw": "{{url}}/mission/register_mission/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"mission",
+						"register_mission",
+						""
+					]
 				}
-			]
+			},
+			"response": []
 		},
 		{
-			"name": "Mission",
-			"description": "",
-			"item": [
-				{
-					"name": "Register Mission (V1.1)",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"title\" : \"Venezuela\",\n  \"area\" : {\n    \"type\": \"FeatureCollection\",\n    \"features\": [\n      {\n        \"type\": \"Feature\",\n        \"geometry\": {\n          \"type\": \"Polygon\",\n          \"coordinates\": \n            [\n              [\n                -78.046875,\n                13.581920900545844\n              ],\n              [\n                -73.47656249999999,\n                -3.162455530237848\n              ],\n              [\n                -60.8203125,\n                14.26438308756265\n              ],\n              [\n                -78.046875,\n                13.581920900545844\n              ]\n            ]\n        },\n        \"properties\": {}\n      }\n    ]\n  },\n  \"description\" : \"testing minimap\",\n  \"starts_at\": \"10/23/19\",\n  \"ends_at\": \"10/24/19\",\n  \"type\": \"commercial\"\n}"
-						},
-						"url": {
-							"raw": "{{url}}/v1_1/register_mission",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"v1_1",
-								"register_mission"
-							]
+			"name": "Register Drone",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
 						}
-					},
-					"response": []
+					]
 				},
-				{
-					"name": "Delete Missions",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"mission_id\": \"a92d5c59-61d8-4ec9-8ebc-a329f63cb3d6\"\n}"
-						},
-						"url": {
-							"raw": "{{url}}/delete_mission",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"delete_mission"
-							]
-						}
-					},
-					"response": []
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"description\" : \"fixed-wing, 4\\\" blades\",\n  \"manufacturer\" : \"DJI\",\n  \"type\": \"quadrotor\",\n  \"color\": \"Green\"\n}"
 				},
-				{
-					"name": "Get Mission Drones",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"mission_id\" : \"7ed57c2e-a180-4e16-93a1-5c6de541a408\"\n}"
-						},
-						"url": {
-							"raw": "{{url}}/get_mission_drones",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"get_mission_drones"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get Mission Info (V1.1)",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"mission_id\" : \"5ef7145d-1137-4513-b254-33030b456be0\"\n}"
-						},
-						"url": {
-							"raw": "{{url}}/v1_1/get_mission_info",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"v1_1",
-								"get_mission_info"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Edit Clearance",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"mission_id\" : \"958040c1-e250-46b0-95a6-015b5fe17017\",\n\t\"new_clearance_state\" : \"APPROVED\",\n\t\"message\": \"testing messaging.\"\n}"
-						},
-						"url": {
-							"raw": "{{url}}/v1_1/edit_clearance",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"v1_1",
-								"edit_clearance"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get Active Missions (V1.1)",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [],
-						"body": {},
-						"url": {
-							"raw": "{{url}}/v1_1/get_active_missions",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"v1_1",
-								"get_active_missions"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get Upcoming Missions (V1.1)",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [],
-						"body": {},
-						"url": {
-							"raw": "{{url}}/v1_1/get_upcoming_missions",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"v1_1",
-								"get_upcoming_missions"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get Past Missions (V1.1)",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [],
-						"body": {},
-						"url": {
-							"raw": "{{url}}/v1_1/get_past_missions",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"v1_1",
-								"get_past_missions"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get Missions (V1.1)",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"starts_at\": \"2013-09-28 20:30:55\",\n\t\"ends_at\": \"2020-09-28 20:30:55\"\n}"
-						},
-						"url": {
-							"raw": "{{url}}/v1_1/get_missions",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"v1_1",
-								"get_missions"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get Possible Mission Conflicts",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"starts_at\": \"2015-04-05 20:30:55\",\n\t\"ends_at\": \"2020-09-28 20:30:55\"\n}"
-						},
-						"url": {
-							"raw": "{{url}}/v1_0/get_possible_mission_conflicts",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"v1_0",
-								"get_possible_mission_conflicts"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Add Drone to Mission",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"mission_id\" : \"7c0c8672-5ca6-4e6d-b22a-52e16e95d33e\",\n  \"drone_id\" : \"91f7ba21-6aa7-4a70-bd30-e5bcee97e484\",\n  \"operator_id\" : \"2e059539-2e78-4c2a-b65e-020f41931ef4\"\n}"
-						},
-						"url": {
-							"raw": "{{url}}/add_drone_to_mission",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"add_drone_to_mission"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Remove Drone From Mission",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"mission_id\" : \"552f7322-a1de-4c19-a3fd-e22ea1dc2dae\",\n  \"drone_id\" : \"206322db-1d72-40e5-aaf8-b2940e42a2e6\"\n}"
-						},
-						"url": {
-							"raw": "{{url}}/remove_drone_from_mission",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"remove_drone_from_mission"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Edit Mission Details (V1.1)",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"mission_id\" : \"8539f62a-8b3b-4474-9597-595f6785dbc7\",\n  \"title\": \"South Georgia\",\n  \"description\": \"Looking for someone in South Georgia\"\n}"
-						},
-						"url": {
-							"raw": "{{url}}/v1_1/edit_mission_details",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"v1_1",
-								"edit_mission_details"
-							]
-						},
-						"description": "Allows user to edit the details of a mission."
-					},
-					"response": []
+				"url": {
+					"raw": "{{url}}/drone/register_drone/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"drone",
+						"register_drone",
+						""
+					]
 				}
-			]
+			},
+			"response": []
 		},
 		{
-			"name": "User",
-			"description": "",
-			"item": [
-				{
-					"name": "Register User",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							},
-							{
-								"key": "Authorization",
-								"value": "Basic MTpsYXdyZW5jZQ=="
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"email\": \"samcrane7@gmail.com\",\n  \"password\" : \"lawrence\",\n  \"name\" : \"operator [Sam]\"\n}"
-						},
-						"url": {
-							"raw": "{{url}}/v1_1/register_user",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"v1_1",
-								"register_user"
-							]
+			"name": "Add Drone to Mission",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
 						}
-					},
-					"response": []
+					]
 				},
-				{
-					"name": "Update User Info",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							},
-							{
-								"key": "Authorization",
-								"value": "Basic MTpsYXdyZW5jZQ=="
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"name\": \"Sam Crane\",\n  \"picture\": \"imgur.com\"\n}"
-						},
-						"url": {
-							"raw": "{{url}}/v1_0/update_user_info",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"v1_0",
-								"update_user_info"
-							]
-						}
-					},
-					"response": []
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \n\t\"drone_id\": \"fb917116-3873-41a4-b04f-66fc7f711b06\",\n\t\"mission_id\": \"615a243f-8951-4fb4-b74f-5c1437d16128\"\n}"
 				},
-				{
-					"name": "Login (V1.1)",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"email\": \"samcrane8@gmail.com\",\n  \"password\" : \"lawrence\"\n}"
-						},
-						"url": {
-							"raw": "{{url}}/v1_1/login",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"v1_1",
-								"login"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "List All Users",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "]"
-						},
-						"url": {
-							"raw": "{{url}}/v1_0/list_all_users",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"v1_0",
-								"list_all_users"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get User Info",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "]"
-						},
-						"url": {
-							"raw": "{{url}}/v1_0/get_user_info",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"v1_0",
-								"get_user_info"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Logoff (V1.1)",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"body": {},
-						"url": {
-							"raw": "{{url}}/v1_1/logoff",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"v1_1",
-								"logoff"
-							]
-						},
-						"description": "This forces the session to end."
-					},
-					"response": []
-				},
-				{
-					"name": "Is Logged In",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"body": {},
-						"url": {
-							"raw": "{{url}}/v1_0/isLoggedIn",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"v1_0",
-								"isLoggedIn"
-							]
-						},
-						"description": "This forces the session to end."
-					},
-					"response": []
-				},
-				{
-					"name": "Is Government Official",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"body": {},
-						"url": {
-							"raw": "{{url}}/v1_0/is_government_official",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"v1_0",
-								"is_government_official"
-							]
-						},
-						"description": "This forces the session to end."
-					},
-					"response": []
+				"url": {
+					"raw": "{{url}}/mission/add_drone_to_mission/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"mission",
+						"add_drone_to_mission",
+						""
+					]
 				}
-			]
+			},
+			"response": []
 		},
 		{
-			"name": "Document",
-			"description": "",
-			"item": [
-				{
-					"name": "Get User Documents",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "{{url}}/v1_0/get_user_documents",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"v1_0",
-								"get_user_documents"
-							]
-						}
-					},
-					"response": []
+			"name": "Remove Drone from Mission",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \n\t\"drone_id\": \"5b309275-8f3f-484b-8e74-ac9e3e47f25b\",\n\t\"mission_id\": \"7b2067f6-81e9-49a2-9672-c818d31614b8\"\n}"
 				},
-				{
-					"name": "Add Document",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"location\": \"folder\",\n\t\"document_type\": \"pdf\"\n}"
-						},
-						"url": {
-							"raw": "{{url}}/v1_0/add_document",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"v1_0",
-								"add_document"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Delete Document",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"document_id\": \"6bc53823-f0f5-4e48-b9b4-19a9d8680535\"\n}"
-						},
-						"url": {
-							"raw": "{{url}}/v1_0/delete_document",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"v1_0",
-								"delete_document"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get Document From Id",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"document_id\": \"34786a84-cd74-4bff-bc56-8907f4e8ae21\"\n}"
-						},
-						"url": {
-							"raw": "{{url}}/v1_0/get_document_from_id",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"v1_0",
-								"get_document_from_id"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get Documents From Type",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"document_type\": \"pdf\"\n}"
-						},
-						"url": {
-							"raw": "{{url}}/v1_0/get_documents_from_type",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"v1_0",
-								"get_documents_from_type"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Add Document",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"location\": \"folder\",\n\t\"document_type\": \"pdf\"\n}"
-						},
-						"url": {
-							"raw": "{{url}}/v1_0/add_document",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"v1_0",
-								"add_document"
-							]
-						}
-					},
-					"response": []
+				"url": {
+					"raw": "http://127.0.0.1:8000/mission/remove_drone_from_mission/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"mission",
+						"remove_drone_from_mission",
+						""
+					]
 				}
-			]
+			},
+			"response": []
+		},
+		{
+			"name": "Edit Mission Details",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"mission_id\" : \"615a243f-8951-4fb4-b74f-5c1437d16128\",\n  \"title\": \"South Georgia\",\n  \"description\": \"Looking for someone in South Georgia\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/mission/edit_mission_details/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"mission",
+						"edit_mission_details",
+						""
+					]
+				},
+				"description": "Allows user to edit the details of a mission."
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Missions",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"mission_id\": \"abdf5ed9-b2ed-4db1-8b75-3fe997d2ea7b\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/mission/delete_missions/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"mission",
+						"delete_missions",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Missions",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"title\" : \"Venezuela\",\n  \"area\" : {\n    \"type\": \"FeatureCollection\",\n    \"features\": [\n      {\n        \"type\": \"Feature\",\n        \"geometry\": {\n          \"type\": \"Polygon\",\n          \"coordinates\": \n            [\n              [\n                -78.046875,\n                13.581920900545844\n              ],\n              [\n                -73.47656249999999,\n                -3.162455530237848\n              ],\n              [\n                -60.8203125,\n                14.26438308756265\n              ],\n              [\n                -78.046875,\n                13.581920900545844\n              ]\n            ]\n        },\n        \"properties\": {}\n      }\n    ]\n  },\n  \"description\" : \"testing minimap\",\n  \"starts_at\": \"2018-10-12T11:45:00+05\",\n  \"ends_at\": \"2018-11-12T11:45:00+05\",\n  \"type\": \"commercial\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/mission/get_missions/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"mission",
+						"get_missions",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User Drones",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"title\" : \"Venezuela\",\n  \"area\" : {\n    \"type\": \"FeatureCollection\",\n    \"features\": [\n      {\n        \"type\": \"Feature\",\n        \"geometry\": {\n          \"type\": \"Polygon\",\n          \"coordinates\": \n            [\n              [\n                -78.046875,\n                13.581920900545844\n              ],\n              [\n                -73.47656249999999,\n                -3.162455530237848\n              ],\n              [\n                -60.8203125,\n                14.26438308756265\n              ],\n              [\n                -78.046875,\n                13.581920900545844\n              ]\n            ]\n        },\n        \"properties\": {}\n      }\n    ]\n  },\n  \"description\" : \"testing minimap\",\n  \"starts_at\": \"2018-10-12T11:45:00+05\",\n  \"ends_at\": \"2018-11-12T11:45:00+05\",\n  \"type\": \"commercial\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/drone/get_user_drones/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"drone",
+						"get_user_drones",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Mission Info",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"mission_id\": \"615a243f-8951-4fb4-b74f-5c1437d16128\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/mission/get_mission_info/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"mission",
+						"get_mission_info",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit Mission Clearance",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"mission_id\": \"615a243f-8951-4fb4-b74f-5c1437d16128\",\n\t\"created_by\": \"samcrane6\",\n\t\"state\": \"APPROVED\",\n\t\"message\": \"This looks good.\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/mission/edit_clearance/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"mission",
+						"edit_clearance",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Mission Drones",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"mission_id\": \"615a243f-8951-4fb4-b74f-5c1437d16128\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/mission/get_mission_drones/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"mission",
+						"get_mission_drones",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Past Missions",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"title\" : \"Venezuela\",\n  \"area\" : {\n    \"type\": \"FeatureCollection\",\n    \"features\": [\n      {\n        \"type\": \"Feature\",\n        \"geometry\": {\n          \"type\": \"Polygon\",\n          \"coordinates\": \n            [\n              [\n                -78.046875,\n                13.581920900545844\n              ],\n              [\n                -73.47656249999999,\n                -3.162455530237848\n              ],\n              [\n                -60.8203125,\n                14.26438308756265\n              ],\n              [\n                -78.046875,\n                13.581920900545844\n              ]\n            ]\n        },\n        \"properties\": {}\n      }\n    ]\n  },\n  \"description\" : \"testing minimap\",\n  \"starts_at\": \"2018-10-12T11:45:00+05\",\n  \"ends_at\": \"2018-11-12T11:45:00+05\",\n  \"type\": \"commercial\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/mission/get_past_missions/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"mission",
+						"get_past_missions",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Upcoming Missions",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"title\" : \"Venezuela\",\n  \"area\" : {\n    \"type\": \"FeatureCollection\",\n    \"features\": [\n      {\n        \"type\": \"Feature\",\n        \"geometry\": {\n          \"type\": \"Polygon\",\n          \"coordinates\": \n            [\n              [\n                -78.046875,\n                13.581920900545844\n              ],\n              [\n                -73.47656249999999,\n                -3.162455530237848\n              ],\n              [\n                -60.8203125,\n                14.26438308756265\n              ],\n              [\n                -78.046875,\n                13.581920900545844\n              ]\n            ]\n        },\n        \"properties\": {}\n      }\n    ]\n  },\n  \"description\" : \"testing minimap\",\n  \"starts_at\": \"2018-10-12T11:45:00+05\",\n  \"ends_at\": \"2018-11-12T11:45:00+05\",\n  \"type\": \"commercial\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/mission/get_upcoming_missions/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"mission",
+						"get_upcoming_missions",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "{{client_id}}",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "{{client_secret}}",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "samcrane6",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "lawrence6",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/o/token/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"o",
+						"token",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\": \"samcrane5\",\n\t\"password\": \"lawrence5\",\n\t\"email\": \"samcrane8@gmail.com\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/user/register_user/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"user",
+						"register_user",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "{{client_id}}",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "{{client_secret}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/o/revoke_token/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"o",
+						"revoke_token",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "{{url}}/user/get/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"user",
+						"get",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Is User Logged In",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "{{url}}/user/is_logged_in/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"user",
+						"is_logged_in",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Is Government Official",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "{{url}}/official/is_government_official/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"official",
+						"is_government_official",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User Info",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "{{url}}/user/get_user_info/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"user",
+						"get_user_info",
+						""
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
